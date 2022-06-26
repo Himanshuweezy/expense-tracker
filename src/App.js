@@ -25,6 +25,9 @@ function App() {
             date: new Date(2021, 5, 12),
         },
     ]);
+    const deleteHandler = (id) => {
+        setExpenses(expenses.filter((expense) => expense.id !== id));
+    }
     
     const extractDataHandlder=(enteredData)=>{
         console.log(enteredData);
@@ -36,7 +39,7 @@ function App() {
         <div>
             <NewExpense onExtractData={extractDataHandlder}/>
            
-            <Expenses expenses={expenses} />
+            <Expenses delete={deleteHandler} expenses={expenses} />
         </div>
     );
 }

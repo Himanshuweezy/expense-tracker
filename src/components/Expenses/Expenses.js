@@ -27,6 +27,8 @@ export const Expenses = (props) => {
                 filteredItems.map((expense) => {
                     return (
                         <ExpenseItem
+                        delete={props.delete}
+                        id={expense.id}
                             key={expense.id}
                             title={expense.title}
                             amount={expense.amount}
